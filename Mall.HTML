@@ -4,84 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ditt Företag</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      display: flex;
-      min-height: 100vh;
-      background-color: #f4f4f4;
-    }
-
-    .sidebar {
-      width: 200px;
-      background-color: #222;
-      padding-top: 2rem;
-    }
-
-    .sidebar ul {
-      list-style: none;
-    }
-
-    .sidebar li {
-      margin: 1rem 0;
-    }
-
-    .sidebar a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.75rem 1rem;
-      display: block;
-      transition: background 0.2s ease;
-    }
-
-    .sidebar a:hover {
-      background-color: #444;
-    }
-
-    .main-content {
-      flex: 1;
-      padding: 2rem;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      color: #222;
-      margin-bottom: 0.5rem;
-    }
-
-    header hr {
-      border: 1px solid #222;
-      width: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="sidebar">
     <nav>
       <ul>
-        <li><a href="#om-oss">Om oss</a></li>
-        <li><a href="#offert">Offert</a></li>
-        <li><a href="#information">Information</a></li>
-        <li><a href="#blogg">Blogg</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="offert.html">Offert</a></li>
+        <li><a href="information.html">Information</a></li>
+        <li><a href="blogg.html">Blogg</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
   </div>
 
-  <div class="main-content">
-    <header>
-      <h1>Ditt Företag</h1>
-      <hr>
-    </header>
-    <section id="content">
-      <!-- Innehåll visas här -->
-    </section>
-  </div>
+    <div class="main-content">
+      <header class="hero">
+        <a href="Mall.HTML" class="logo-btn">Ditt Företag</a>
+      </header>
+      <section id="content">
+        <!-- Innehåll visas här -->
+      </section>
+      <footer>
+        <p>&copy; 2024 Ditt Företag</p>
+      </footer>
+    </div>
 </body>
 </html>
