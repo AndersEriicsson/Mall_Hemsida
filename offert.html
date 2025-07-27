@@ -24,11 +24,61 @@
     </header>
     <section id="content">
       <h2>Offert</h2>
-      <p>Begär en offert från oss.</p>
+      <p>Välj antal för de produkter du är intresserad av och klicka på "Beräkna pris" för att se en ungefärlig offert.</p>
+      <form id="offerForm">
+        <table id="offerTable">
+          <thead>
+            <tr><th>Produkt</th><th>Pris (kr)</th><th>Antal</th></tr>
+          </thead>
+          <tbody id="productRows"></tbody>
+        </table>
+        <button id="calcBtn">Beräkna pris</button>
+      </form>
+      <p id="result"></p>
     </section>
     <footer>
       <p>&copy; 2024 Ditt Företag</p>
     </footer>
   </div>
+<script>
+const products = [
+  {name: 'Produkt 1', price: 100},
+  {name: 'Produkt 2', price: 150},
+  {name: 'Produkt 3', price: 200},
+  {name: 'Produkt 4', price: 250},
+  {name: 'Produkt 5', price: 300},
+  {name: 'Produkt 6', price: 350},
+  {name: 'Produkt 7', price: 400},
+  {name: 'Produkt 8', price: 450},
+  {name: 'Produkt 9', price: 500},
+  {name: 'Produkt 10', price: 550},
+  {name: 'Produkt 11', price: 600},
+  {name: 'Produkt 12', price: 650},
+  {name: 'Produkt 13', price: 700},
+  {name: 'Produkt 14', price: 750},
+  {name: 'Produkt 15', price: 800},
+  {name: 'Produkt 16', price: 850},
+  {name: 'Produkt 17', price: 900},
+  {name: 'Produkt 18', price: 950},
+  {name: 'Produkt 19', price: 1000},
+  {name: 'Produkt 20', price: 1050}
+];
+const tbody = document.getElementById('productRows');
+products.forEach((p, i) => {
+  const row = document.createElement('tr');
+  row.innerHTML = `<td>${p.name}</td><td>${p.price}</td><td><input type="number" min="0" value="0" id="qty${i}"></td>`;
+  tbody.appendChild(row);
+});
+document.getElementById('calcBtn').addEventListener('click', e => {
+  e.preventDefault();
+  let total = 0;
+  products.forEach((p, i) => {
+    const q = parseInt(document.getElementById('qty' + i).value) || 0;
+    total += q * p.price;
+  });
+  const final = Math.round(total * (0.9 + Math.random() * 0.2));
+  document.getElementById('result').textContent = 'Ungefärligt pris: ' + final + ' kr';
+});
+</script>
 </body>
 </html>
